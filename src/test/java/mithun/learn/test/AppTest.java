@@ -4,17 +4,27 @@ package mithun.learn.test;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import mithun.config.MithunConfig;
 import mithun.learn.samples.App;
 
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(classes= {MithunConfig.class})
 public class AppTest {
 
+	@Autowired
+	private App app;
+	
+	
 	@Test
 	public void testPrintMessage() {
 		String messageToTest = "HelloWorld";
-		assertSame(messageToTest, new App().printMessage(messageToTest));
-		//assertThat(new App().printMessage(messageToTest), contains(messageToTest));
-		//fail("Not yet implemented");
+		assertEquals("HelloWorld", app.printMessage(messageToTest));
+		
 	}
 
 }
