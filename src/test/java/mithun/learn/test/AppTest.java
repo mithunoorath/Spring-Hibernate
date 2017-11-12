@@ -14,6 +14,7 @@ import mithun.learn.samples.App;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes= {MithunConfig.class})
+
 public class AppTest {
 
 	@Autowired
@@ -22,8 +23,8 @@ public class AppTest {
 	
 	@Test
 	public void testPrintMessage() {
-		String messageToTest = "HelloWorld";
-		assertEquals("HelloWorld", app.printMessage(messageToTest));
+		Integer messageToTest = 1000;
+		assertFalse(!app.printMessage(messageToTest));
 		
 	}
 
