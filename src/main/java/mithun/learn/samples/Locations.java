@@ -11,13 +11,19 @@ import javax.persistence.Table;
 
 import org.springframework.context.annotation.EnableLoadTimeWeaving;
 
+import oracle.sql.CHAR;
+
 @Entity
-@Table(name="LOCATIONS")
+@Table(name="LOCATIONS", schema="HR")
 public class Locations implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	@Column(name="location_id",unique=true)
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Id
-	private int locationId;
+	private Long locationId;
 	@Column(name="street_address")
 	private String streetAddress;
 	@Column(name="postal_code")
@@ -27,11 +33,11 @@ public class Locations implements Serializable{
 	@Column(name="state_province")
 	private String stateProvince;
 	@Column(name="Country_ID")
-	private int countryId;
-	public int getLocationId() {
+	private CHAR countryId;
+	public Long getLocationId() {
 		return locationId;
 	}
-	public void setLocationId(int locationId) {
+	public void setLocationId(Long locationId) {
 		this.locationId = locationId;
 	}
 	public String getStreetAddress() {
@@ -58,10 +64,10 @@ public class Locations implements Serializable{
 	public void setStateProvince(String stateProvince) {
 		this.stateProvince = stateProvince;
 	}
-	public int getCountryId() {
+	public CHAR getCountryId() {
 		return countryId;
 	}
-	public void setCountryId(int countryId) {
+	public void setCountryId(CHAR countryId) {
 		this.countryId = countryId;
 	}
 	

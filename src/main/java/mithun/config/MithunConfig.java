@@ -21,8 +21,8 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import mithun.learn.samples.App;
-import mithun.learn.samples.Dao.AppDao;
+import mithun.learn.samples.*;
+//import mithun.learn.samples.Dao.AppDao;
 
 @Configuration
 @EnableTransactionManagement
@@ -77,8 +77,8 @@ public class MithunConfig {
 	
 	Properties hibernateAddlProperties() {
 		Properties properties = new Properties();
-		properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
-	    properties.setProperty("hibernate.dialect", "org.hibernate.dialect.OracleDialect");
+		//properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
+	    properties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
 	    return properties;
 	    
 	}

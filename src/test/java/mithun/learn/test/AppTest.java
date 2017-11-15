@@ -23,8 +23,9 @@ public class AppTest {
 	
 	@Test
 	public void testPrintMessage() {
-		Integer messageToTest = 1000;
-		assertFalse(!app.printMessage(messageToTest));
+		Long messageToTest = new Long("1000");
+		String messageBack="1000";
+		assertEquals(messageBack, app.printMessage(messageToTest));
 		
 	}
 
